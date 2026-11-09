@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入門英文問題精講 - フラッシュカード</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>入門英文問題精講 <span>Flashcards</span></h1>
+            <button id="home-btn" class="icon-btn hidden" title="メニューへ戻る">🏠 メニュー</button>
+        </header>
+
+        <!-- Mode Selection Screen -->
+        <main id="menu-screen" class="screen">
+            <h2>演習モードの選択</h2>
+            
+            <div class="stock-section">
+                <button id="stock-mode-btn" class="btn btn-stock">
+                    ⭐ ストックした問題をやる (<span id="stock-count">0</span>)
+                </button>
+            </div>
+
+            <div class="divider"><span>または 範囲を選択 (8問刻み)</span></div>
+
+            <div id="range-grid" class="range-grid">
+                <!-- Range buttons will be dynamically generated -->
+            </div>
+        </main>
+
+        <!-- Card Flashcard Screen -->
+        <main id="card-screen" class="screen hidden">
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            
+            <div class="card-status-bar">
+                <span id="card-counter" class="card-counter">No. 1 (1 / 8)</span>
+                <button id="interrupt-btn" class="btn btn-secondary btn-sm">⏹ 中断して戻る</button>
+            </div>
+
+            <div class="flashcard-wrapper">
+                <div id="flashcard" class="flashcard">
+                    <!-- Front side -->
+                    <div class="card-face card-front">
+                        <div class="card-label">原文</div>
+                        <div id="card-original" class="card-text"></div>
+                        <div class="tap-hint">💡 タップして裏面を表示</div>
+                    </div>
+                    <!-- Back side -->
+                    <div class="card-face card-back">
+                        <div class="card-section">
+                            <div class="card-label">和訳</div>
+                            <div id="card-translation" class="card-text"></div>
+                        </div>
+                        <div class="card-section">
+                            <div class="card-label">構文解説</div>
+                            <div id="card-explanation" class="card-text explanation"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action buttons (Bottom) -->
+            <div id="action-buttons" class="action-buttons hidden">
+                <button id="understand-btn" class="btn btn-success">
+                    ✅ 理解した
+                </button>
+                <button id="restock-btn" class="btn btn-warning">
+                    📌 あとでまたやる
+                </button>
+            </div>
+        </main>
+
+        <!-- Result Screen -->
+        <main id="result-screen" class="screen hidden">
+            <div class="result-card">
+                <h2>🎉 お疲れ様でした！</h2>
+                <p id="result-summary"></p>
+                <div class="result-actions">
+                    <button id="result-menu-btn" class="btn btn-primary">メニューへ戻る</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="sentences.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
