@@ -4,27 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>入門英文問題精講 - フラッシュカード</title>
+    
+    <!-- Google FontsからUD系フォント（BIZ UDPGothic）を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+    
     <style>
-    .back-portal-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 12px;
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: #64748b;
-        background-color: #f1f5f9;
-        border: 1px solid #e2e8f0;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: background-color 0.2s, color 0.2s;
-    }
-    .back-portal-link:hover {
-        background-color: #e2e8f0;
-        color: #1e293b;
-    }
-</style>
+        :root {
+            --base-font: "UD Digi Kyokasho N-R", "UD Digital Kyokasho NK-R", "BIZ UDPGothic", "メイリオ", Meiryo, sans-serif;
+        }
+
+        /* ページ全体および文字を扱う要素にUDフォントを確実に適用 */
+        body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+            font-family: var(--base-font) !important;
+        }
+
+        .back-portal-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #64748b;
+            background-color: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .back-portal-link:hover {
+            background-color: #e2e8f0;
+            color: #1e293b;
+        }
+
+        /* ヘッダーのレイアウト調整 */
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="app-container">
@@ -33,8 +58,8 @@
             <h1>入門英文問題精講 <span>Flashcards</span></h1>
             <button id="home-btn" class="icon-btn hidden" title="メニューへ戻る">🏠 メニュー</button>
             <a href="https://rakuchi-ai.github.io/ENGLISH-TOP/" class="back-portal-link">
-    &larr; ポータルに戻る
-</a>
+                &larr; ポータルに戻る
+            </a>
         </header>
 
         <!-- Mode Selection Screen -->
